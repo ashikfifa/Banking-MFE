@@ -1,0 +1,14 @@
+{
+  "name": "@banking-mf/store",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./package.json": "./package.json"
+  },
+  "dependencies": {
+    "zustand": "^5.0.8"
+  }
+}

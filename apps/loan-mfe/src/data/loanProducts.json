@@ -1,0 +1,23 @@
+[
+  {
+    "id": "salary-flex",
+    "name": "Salary Flexi Loan",
+    "interestRate": "9.5%",
+    "maxAmount": 1200000,
+    "tagline": "Designed for salaried professionals with quick approval."
+  },
+  {
+    "id": "smart-home",
+    "name": "Smart Home Loan",
+    "interestRate": "8.2%",
+    "maxAmount": 5000000,
+    "tagline": "Longer tenure for property upgrades and home ownership."
+  },
+  {
+    "id": "personal-bridge",
+    "name": "Personal Bridge Loan",
+    "interestRate": "11.1%",
+    "maxAmount": 800000,
+    "tagline": "Short-term coverage for urgent personal financing needs."
+  }
+]

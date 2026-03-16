@@ -1,0 +1,18 @@
+{
+  "name": "@banking-mf/loan-mfe",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@banking-mf/store": "workspace:*",
+    "@banking-mf/ui-library": "workspace:*",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zustand": "^5.0.8"
+  }
+}
