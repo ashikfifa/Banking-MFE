@@ -2,8 +2,8 @@ import { Button, Card } from "@banking-mf/ui-library";
 
 export function OnboardingSubmitted({ form, documents, onReset }) {
   return (
-    <Card accent className="space-y-5">
-      <div className="inline-flex w-fit rounded-full bg-success-100 px-3 py-1 text-sm font-semibold text-success-700">
+    <Card className="space-y-4">
+      <div className="inline-flex w-fit rounded-xl border border-green-500 bg-white px-4 py-2 text-sm font-semibold text-green-500">
         Onboarding submitted
       </div>
       <div>
@@ -16,15 +16,15 @@ export function OnboardingSubmitted({ form, documents, onReset }) {
         </p>
       </div>
       <div className="grid gap-4 md:grid-cols-3">
-        <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+        <div className="rounded-xl bg-gray-100 p-4 shadow">
           <p className="text-sm font-semibold text-slate-800">NID upload</p>
           <p className="mt-2 text-sm text-slate-600">Front and back uploaded</p>
         </div>
-        <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+        <div className="rounded-xl bg-gray-100 p-4 shadow">
           <p className="text-sm font-semibold text-slate-800">Liveness</p>
           <p className="mt-2 text-sm capitalize text-slate-600">{documents.livenessStatus}</p>
         </div>
-        <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+        <div className="rounded-xl bg-gray-100 p-4 shadow">
           <p className="text-sm font-semibold text-slate-800">Income</p>
           <p className="mt-2 text-sm text-slate-600">{form.income.monthlyIncome}</p>
         </div>

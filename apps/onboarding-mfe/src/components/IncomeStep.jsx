@@ -2,9 +2,9 @@ import { Button, Card, Input } from "@banking-mf/ui-library";
 
 export function IncomeStep({ income, errors, onChange, onBack, onContinue }) {
   return (
-    <Card className="space-y-5">
+    <Card className="space-y-4">
       <div>
-        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary-600">
+        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-blue-600">
           Step 3
         </p>
         <h2 className="mt-2 text-2xl font-semibold text-slate-900">Income information</h2>
@@ -36,7 +36,7 @@ export function IncomeStep({ income, errors, onChange, onBack, onContinue }) {
         />
       </div>
 
-      <div className="flex flex-wrap justify-between gap-3">
+      <div className="flex flex-wrap justify-between gap-4">
         <Button variant="ghost" onClick={onBack}>
           Back
         </Button>

@@ -3,8 +3,8 @@ import { StatusPill } from "./StatusPill.jsx";
 
 function ReviewSection({ title, children }) {
   return (
-    <div className="rounded-xl border border-slate-200 bg-slate-50 p-5 text-sm">
-      <p className="font-semibold uppercase tracking-[0.18em] text-primary-600">{title}</p>
+    <div className="rounded-xl bg-gray-100 p-4 shadow text-sm">
+      <p className="font-semibold uppercase tracking-[0.18em] text-blue-600">{title}</p>
       <div className="mt-4 space-y-2 text-slate-600">{children}</div>
     </div>
   );
@@ -12,9 +12,9 @@ function ReviewSection({ title, children }) {
 
 export function ReviewStep({ form, documents, onBack, onSubmit }) {
   return (
-    <Card className="space-y-5">
+    <Card className="space-y-4">
       <div>
-        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary-600">
+        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-blue-600">
           Step 4
         </p>
         <h2 className="mt-2 text-2xl font-semibold text-slate-900">Review and submit</h2>
@@ -46,7 +46,7 @@ export function ReviewStep({ form, documents, onBack, onSubmit }) {
       </div>
 
       <div className="grid gap-4 md:grid-cols-2">
-        <div className="rounded-xl border border-slate-200 bg-slate-50 p-5 text-sm">
+        <div className="rounded-xl bg-gray-100 p-4 shadow text-sm">
           <p className="font-semibold text-slate-800">NID upload status</p>
           <div className="mt-4 space-y-2 text-slate-600">
             <p>Front: {documents.nidFront?.name || "Missing"}</p>
@@ -54,9 +54,9 @@ export function ReviewStep({ form, documents, onBack, onSubmit }) {
           </div>
         </div>
 
-        <div className="rounded-xl border border-slate-200 bg-slate-50 p-5 text-sm">
+        <div className="rounded-xl bg-gray-100 p-4 shadow text-sm">
           <p className="font-semibold text-slate-800">Liveness verification</p>
-          <div className="mt-4 flex items-center gap-3">
+          <div className="mt-4 flex items-center gap-4">
             {documents.livenessStatus === "verified" ? (
               <StatusPill label="Verified" tone="success" />
             ) : (
@@ -66,7 +66,7 @@ export function ReviewStep({ form, documents, onBack, onSubmit }) {
         </div>
       </div>
 
-      <div className="flex flex-wrap justify-between gap-3">
+      <div className="flex flex-wrap justify-between gap-4">
         <Button variant="ghost" onClick={onBack}>
           Back
         </Button>

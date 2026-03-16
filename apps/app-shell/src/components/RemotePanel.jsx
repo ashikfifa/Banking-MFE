@@ -6,7 +6,7 @@ export function RemotePanel({ title, description, children }) {
     <Card>
       <div className="mb-6 flex items-end justify-between gap-4">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary-600">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-blue-600">
             Micro frontend
           </p>
           <h1 className="mt-2 text-2xl font-semibold text-slate-900">{title}</h1>
@@ -15,7 +15,7 @@ export function RemotePanel({ title, description, children }) {
       </div>
       <Suspense
         fallback={
-          <div className="rounded-xl border border-dashed border-slate-200 bg-slate-50 p-6">
+          <div className="rounded-xl bg-gray-100 p-6 shadow">
             <Loader label="Loading remote module..." />
           </div>
         }

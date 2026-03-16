@@ -1,4 +1,4 @@
-import { Button, Card, Loader } from "@banking-mf/ui-library";
+import { Card, Loader } from "@banking-mf/ui-library";
 
 export function ProductSelectionStep({
   products,
@@ -7,9 +7,9 @@ export function ProductSelectionStep({
   formatCurrency
 }) {
   return (
-    <Card className="space-y-5">
+    <Card className="space-y-4">
       <div>
-        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary-600">
+        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-blue-600">
           Step 1
         </p>
         <h2 className="mt-2 text-2xl font-semibold text-slate-900">Select a loan product</h2>
@@ -20,32 +20,33 @@ export function ProductSelectionStep({
       </div>
 
       {isLoadingProducts ? (
-        <div className="rounded-xl border border-dashed border-slate-200 bg-slate-50 p-6">
+        <div className="rounded-xl bg-gray-100 p-6 shadow">
           <Loader label="Fetching loan products..." />
         </div>
       ) : (
         <div className="grid gap-4 md:grid-cols-3">
           {products.map((product) => (
-            <Card
+            <button
               key={product.id}
-              className="flex h-full flex-col justify-between border border-transparent bg-slate-50 p-5"
+              type="button"
+              onClick={() => onSelectProduct(product)}
+              className="flex h-full flex-col gap-4 rounded-xl bg-white p-6 text-left shadow transition hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-600/10"
             >
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary-600">
+              <div className="space-y-4">
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-600">
                   {product.interestRate} interest
                 </p>
-                <h3 className="mt-3 text-xl font-semibold text-slate-900">{product.name}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-500">{product.tagline}</p>
+                <h3 className="text-xl font-semibold text-slate-900">{product.name}</h3>
+                <p className="text-sm leading-6 text-slate-500">{product.tagline}</p>
               </div>
-              <div className="mt-6 space-y-4">
+
+              <div className="mt-auto rounded-xl bg-gray-100 p-4 shadow">
                 <p className="text-sm font-medium text-slate-700">
                   Maximum amount: {formatCurrency(product.maxAmount)}
                 </p>
-                <Button fullWidth onClick={() => onSelectProduct(product)}>
-                  Select product
-                </Button>
+                <p className="mt-4 text-sm font-medium text-blue-600">Click card to select</p>
               </div>
-            </Card>
+            </button>
           ))}
         </div>
       )}

@@ -1,12 +1,12 @@
 const variants = {
   primary:
-    "bg-primary-600 text-white shadow-float hover:bg-primary-700 focus-visible:ring-primary-300",
+    "bg-blue-600 text-white hover:opacity-90 focus-visible:ring-blue-600/20",
   secondary:
-    "border border-primary-200 bg-white text-primary-700 hover:bg-primary-50 focus-visible:ring-primary-200",
+    "border border-blue-600 bg-white text-blue-600 hover:bg-gray-100 focus-visible:ring-blue-600/20",
   ghost:
-    "bg-transparent text-slate-700 hover:bg-slate-100 focus-visible:ring-slate-200",
+    "border border-slate-200 bg-white text-slate-700 hover:bg-gray-100 focus-visible:ring-slate-200",
   success:
-    "bg-success-500 text-white hover:bg-success-600 focus-visible:ring-success-200"
+    "bg-green-500 text-white hover:opacity-90 focus-visible:ring-green-500/20"
 };
 
 export function Button({
