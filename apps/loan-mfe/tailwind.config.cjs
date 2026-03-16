@@ -7,6 +7,9 @@ module.exports = {
     "./src/**/*.{js,jsx}",
     "../../packages/ui-library/src/**/*.{js,jsx}"
   ],
+  corePlugins: {
+    preflight: false
+  },
   theme: {
     extend: {}
   },

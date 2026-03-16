@@ -1,13 +1,2 @@
-@tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  color-scheme: light;
-  font-family: "Satoshi", "Segoe UI", sans-serif;
-}
-
-body {
-  margin: 0;
-  background: transparent;
-}

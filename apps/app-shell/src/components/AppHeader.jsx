@@ -9,15 +9,15 @@ const navigationItems = [
 export function AppHeader() {
   return (
     <header className="border-b border-white/60 bg-white/75 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-4 md:flex-row md:items-center md:justify-between md:px-6">
-        <div>
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-4 px-4 py-4 md:px-6">
+        <div className="min-w-0">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary-600">
             App Shell
           </p>
           <p className="text-lg font-semibold text-slate-900">Retail Banking Platform</p>
         </div>
 
-        <nav className="flex flex-wrap gap-2 rounded-2xl bg-slate-100 p-1">
+        <nav className="ml-auto flex flex-wrap gap-2 rounded-2xl bg-slate-100 p-1">
           {navigationItems.map((item) => (
             <NavLink
               key={item.to}
