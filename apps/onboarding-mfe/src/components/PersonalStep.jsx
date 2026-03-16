@@ -18,9 +18,9 @@ export function PersonalStep({
   onContinue
 }) {
   return (
-    <Card className="space-y-5">
+    <Card className="space-y-4">
       <div>
-        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary-600">
+        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-blue-600">
           Step 1
         </p>
         <h2 className="mt-2 text-2xl font-semibold text-slate-900">Personal information</h2>
@@ -70,7 +70,7 @@ export function PersonalStep({
             file={documents.nidFront}
             onFileSelect={(file) => onFileSelect("nidFront", file)}
           />
-          {errors.nidFront ? <p className="text-sm text-danger-500">{errors.nidFront}</p> : null}
+          {errors.nidFront ? <p className="text-sm text-red-500">{errors.nidFront}</p> : null}
         </div>
         <div className="space-y-2">
           <FileUploader
@@ -80,14 +80,14 @@ export function PersonalStep({
             file={documents.nidBack}
             onFileSelect={(file) => onFileSelect("nidBack", file)}
           />
-          {errors.nidBack ? <p className="text-sm text-danger-500">{errors.nidBack}</p> : null}
+          {errors.nidBack ? <p className="text-sm text-red-500">{errors.nidBack}</p> : null}
         </div>
       </div>
 
       <div className="space-y-4">
         <CameraPreview capturedImage={documents.faceImage} onCapture={onCapture} />
 
-        <div className="flex flex-wrap items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 p-4">
+        <div className="flex flex-wrap items-center gap-4 rounded-xl bg-gray-100 p-4 shadow">
           <span className="text-sm font-semibold text-slate-700">Verification status:</span>
           {documents.livenessStatus === "verified" ? (
             <StatusPill label="Verified" tone="success" />
@@ -102,7 +102,7 @@ export function PersonalStep({
         </div>
 
         {errors.livenessStatus ? (
-          <p className="text-sm text-danger-500">{errors.livenessStatus}</p>
+          <p className="text-sm text-red-500">{errors.livenessStatus}</p>
         ) : null}
       </div>
 

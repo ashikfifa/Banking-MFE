@@ -10,15 +10,15 @@ export function Input({
       {label ? <span className="text-sm font-medium text-slate-700">{label}</span> : null}
       <input
         className={[
-          "rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-primary-400 focus:ring-4 focus:ring-primary-100",
-          error ? "border-danger-400 focus:border-danger-400 focus:ring-danger-100" : "",
+          "rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10",
+          error ? "border-red-500 focus:border-red-500 focus:ring-red-500/10" : "",
           inputClassName
         ]
           .filter(Boolean)
           .join(" ")}
         {...props}
       />
-      {error ? <span className="text-sm text-danger-500">{error}</span> : null}
+      {error ? <span className="text-sm text-red-500">{error}</span> : null}
     </label>
   );
 }

@@ -9,7 +9,7 @@ export function FileUploader({
   return (
     <label
       className={[
-        "flex cursor-pointer flex-col gap-3 rounded-xl border border-dashed border-primary-200 bg-primary-50/60 p-4 transition hover:border-primary-400 hover:bg-primary-50",
+        "flex cursor-pointer flex-col gap-4 rounded-xl border border-dashed border-blue-600 bg-white p-4 transition hover:bg-gray-100",
         className
       ]
         .filter(Boolean)
@@ -19,7 +19,7 @@ export function FileUploader({
       <span className="text-sm text-slate-500">
         {file?.name ? `Selected: ${file.name}` : helperText}
       </span>
-      <span className="inline-flex w-fit rounded-lg bg-white px-3 py-2 text-sm font-medium text-primary-700">
+      <span className="inline-flex w-fit rounded-xl border border-blue-600 bg-white px-4 py-2 text-sm font-medium text-blue-600">
         Choose file
       </span>
       <input

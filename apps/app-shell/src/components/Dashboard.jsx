@@ -16,15 +16,12 @@ export function Dashboard() {
   const onboardingForm = useBankingStore((state) => state.onboardingForm);
   const loanApplication = useBankingStore((state) => state.loanApplication);
 
-  const onboardingTone = onboardingProgress.isSubmitted ? "text-success-300" : "text-white";
-  const loanTone = loanApplication.status === "submitted" ? "text-success-300" : "text-white";
-
   return (
     <div className="space-y-6">
-      <Card accent className="overflow-hidden">
-        <div className="grid gap-6 md:grid-cols-[1.4fr_1fr]">
+      <Card className="overflow-hidden">
+        <div className="grid gap-4 md:grid-cols-[1.4fr_1fr]">
           <div className="space-y-4">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary-600">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-blue-600">
               Banking Micro-Frontend
             </p>
             <div className="space-y-2">
@@ -36,7 +33,7 @@ export function Dashboard() {
                 modules are lazy loaded through Vite Module Federation.
               </p>
             </div>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-4">
               <NavLink to="/onboarding">
                 <Button>Start onboarding</Button>
               </NavLink>
@@ -46,25 +43,25 @@ export function Dashboard() {
             </div>
           </div>
 
-          <div className="rounded-2xl bg-slate-950 p-5 text-white shadow-float">
-            <p className="text-sm uppercase tracking-[0.24em] text-primary-200">Live summary</p>
-            <div className="mt-5 space-y-4 text-sm">
+          <div className="rounded-xl bg-gray-100 p-6 shadow">
+            <p className="text-sm uppercase tracking-[0.24em] text-blue-600">Live summary</p>
+            <div className="mt-4 space-y-4 text-sm">
               <div>
-                <p className="text-slate-400">Customer</p>
-                <p className="mt-1 text-lg font-semibold">
+                <p className="text-slate-500">Customer</p>
+                <p className="mt-1 text-lg font-semibold text-slate-900">
                   {userProfile.fullName || "No profile created yet"}
                 </p>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
-                  <p className="text-slate-400">Onboarding</p>
-                  <p className={["mt-1 font-semibold", onboardingTone].join(" ")}>
+                  <p className="text-slate-500">Onboarding</p>
+                  <p className="mt-1 font-semibold text-slate-900">
                     {onboardingProgress.isSubmitted ? "Completed" : `Step ${onboardingProgress.step}`}
                   </p>
                 </div>
                 <div>
-                  <p className="text-slate-400">Loan</p>
-                  <p className={["mt-1 font-semibold", loanTone].join(" ")}>
+                  <p className="text-slate-500">Loan</p>
+                  <p className="mt-1 font-semibold text-slate-900">
                     {loanApplication.status === "submitted"
                       ? "Application submitted"
                       : loanApplication.selectedProduct
@@ -78,7 +75,7 @@ export function Dashboard() {
         </div>
       </Card>
 
-      <div className="grid gap-6 lg:grid-cols-3">
+      <div className="grid gap-4 lg:grid-cols-3">
         <Card className="lg:col-span-2">
           <div className="mb-4 flex items-center justify-between">
             <div>
@@ -89,7 +86,7 @@ export function Dashboard() {
             </div>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
-            <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <div className="rounded-xl bg-gray-100 p-4 shadow">
               <p className="text-sm font-semibold text-slate-800">User profile</p>
               <dl className="mt-4 space-y-3 text-sm">
                 <div>
@@ -113,7 +110,7 @@ export function Dashboard() {
               </dl>
             </div>
 
-            <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <div className="rounded-xl bg-gray-100 p-4 shadow">
               <p className="text-sm font-semibold text-slate-800">Onboarding status</p>
               <dl className="mt-4 space-y-3 text-sm">
                 <div>

@@ -1,12 +1,12 @@
 export function StatusPill({ label, tone }) {
   const tones = {
-    success: "bg-success-100 text-success-700",
-    warning: "bg-amber-100 text-amber-700",
-    neutral: "bg-slate-100 text-slate-600"
+    success: "border border-green-500 bg-white text-green-500",
+    warning: "border border-blue-600 bg-white text-blue-600",
+    neutral: "border border-slate-200 bg-white text-slate-600"
   };
 
   return (
-    <span className={["inline-flex rounded-full px-3 py-1 text-sm font-medium", tones[tone]].join(" ")}>
+    <span className={["inline-flex rounded-xl px-4 py-2 text-sm font-medium", tones[tone]].join(" ")}>
       {label}
     </span>
   );
