@@ -1,0 +1,11 @@
+<svg width="220" height="48" viewBox="0 0 220 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">BRAC Bank PLC</title>
+  <desc id="logoDesc">BRAC Bank PLC logo mark and wordmark</desc>
+  <rect width="48" height="48" rx="10" fill="#00539B"/>
+  <path d="M12 12H24V24H12V12Z" fill="#FFFFFF"/>
+  <path d="M24 24H36V36H24V24Z" fill="#7CC242"/>
+  <path d="M12 24H24V36H12V24Z" fill="#A5D86E"/>
+  <path d="M24 12H36V24H24V12Z" fill="#E8F5D8"/>
+  <text x="58" y="22" fill="#0F172A" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">BRAC Bank</text>
+  <text x="58" y="38" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600">PLC</text>
+</svg>
