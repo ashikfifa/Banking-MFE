@@ -1,5 +1,7 @@
 # Banking Micro-Frontend Assignment
 
+![Banking MFE logo](apps/app-shell/public/logo.svg)
+
 A pnpm workspace monorepo containing:
 
 - `apps/app-shell`
@@ -28,3 +30,18 @@ pnpm dev
 ```bash
 pnpm build
 ```
+
+## Preview
+
+![brac-ss-1](apps/app-shell/public/brac-ss-1.jpg)
+![brac-ss-2](apps/app-shell/public/brac-ss-2.jpg)
+![brac-ss-5](apps/app-shell/public/brac-ss-5.PNG)
+![brac-ss-6](apps/app-shell/public/brac-ss-6.PNG)
+![brac-ss-7](apps/app-shell/public/brac-ss-7.PNG)
+![brac-ss-8](apps/app-shell/public/brac-ss-8.PNG)
+![brac-ss-8-1](apps/app-shell/public/brac-ss-8-1.jpg)
+![brac-ss-9](apps/app-shell/public/brac-ss-9.PNG)
+![brac-ss-10](apps/app-shell/public/brac-ss-10.PNG)
+![brac-ss-11](apps/app-shell/public/brac-ss-11.PNG)
+
+
