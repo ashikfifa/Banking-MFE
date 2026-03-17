@@ -10,6 +10,14 @@ function formatTimestamp(value) {
   return new Date(value).toLocaleString();
 }
 
+function formatDate(value) {
+  if (!value) {
+    return "Pending";
+  }
+
+  return new Date(value).toLocaleDateString();
+}
+
 export function Dashboard() {
   const userProfile = useBankingStore((state) => state.userProfile);
   const onboardingProgress = useBankingStore((state) => state.onboardingProgress);
@@ -94,6 +102,12 @@ export function Dashboard() {
                   <dd className="font-medium text-slate-700">{userProfile.fullName || "Pending"}</dd>
                 </div>
                 <div>
+                  <dt className="text-slate-400">Date of birth</dt>
+                  <dd className="font-medium text-slate-700">
+                    {formatDate(userProfile.dateOfBirth)}
+                  </dd>
+                </div>
+                <div>
                   <dt className="text-slate-400">Email</dt>
                   <dd className="font-medium text-slate-700">{userProfile.email || "Pending"}</dd>
                 </div>
@@ -107,12 +121,38 @@ export function Dashboard() {
                     {userProfile.monthlyIncome || "Pending"}
                   </dd>
                 </div>
+                <div>
+                  <dt className="text-slate-400">Occupation</dt>
+                  <dd className="font-medium text-slate-700">
+                    {userProfile.occupation || "Pending"}
+                  </dd>
+                </div>
               </dl>
             </div>
 
             <div className="rounded-xl bg-gray-100 p-4 shadow">
               <p className="text-sm font-semibold text-slate-800">Onboarding status</p>
               <dl className="mt-4 space-y-3 text-sm">
+                <div>
+                  <dt className="text-slate-400">Address</dt>
+                  <dd className="font-medium text-slate-700">
+                    {userProfile.presentAddress || "Pending"}
+                  </dd>
+                </div>
+                <div>
+                  <dt className="text-slate-400">City</dt>
+                  <dd className="font-medium text-slate-700">{userProfile.city || "Pending"}</dd>
+                </div>
+                <div>
+                  <dt className="text-slate-400">District</dt>
+                  <dd className="font-medium text-slate-700">{userProfile.district || "Pending"}</dd>
+                </div>
+                <div>
+                  <dt className="text-slate-400">Postal code</dt>
+                  <dd className="font-medium text-slate-700">
+                    {userProfile.postalCode || "Pending"}
+                  </dd>
+                </div>
                 <div>
                   <dt className="text-slate-400">NID upload</dt>
                   <dd className="font-medium text-slate-700">

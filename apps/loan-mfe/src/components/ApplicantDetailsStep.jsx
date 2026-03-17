@@ -1,4 +1,12 @@
 import { Button, Card, Input } from "@banking-mf/ui-library";
+import {
+  LOAN_AMOUNT_OPTIONS,
+  LOAN_MONTHLY_INCOME_OPTIONS,
+  LOAN_TENURE_OPTIONS
+} from "../lib/loanHelpers.js";
+
+const selectClassName =
+  "rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10";
 
 export function ApplicantDetailsStep({
   selectedProduct,
@@ -64,28 +72,75 @@ export function ApplicantDetailsStep({
           error={errors.email}
           onChange={(event) => onChange({ email: event.target.value })}
         />
-        <Input
-          label="Monthly Income"
-          type="number"
-          placeholder="Enter monthly income"
-          value={personal.monthlyIncome}
-          error={errors.monthlyIncome}
-          onChange={(event) => onChange({ monthlyIncome: event.target.value })}
-        />
-        <Input
-          label="Loan Amount"
-          type="number"
-          placeholder="Optional requested amount"
-          value={personal.loanAmount}
-          error={errors.loanAmount}
-          onChange={(event) => onChange({ loanAmount: event.target.value })}
-        />
-        <Input
-          label="Loan Tenure"
-          placeholder="Optional tenure, e.g. 36 months"
-          value={personal.loanTenure}
-          onChange={(event) => onChange({ loanTenure: event.target.value })}
-        />
+        <label className="flex flex-col gap-2">
+          <span className="text-sm font-medium text-slate-700">Monthly Income</span>
+          <select
+            className={[
+              selectClassName,
+              errors.monthlyIncome ? "border-red-500 focus:border-red-500 focus:ring-red-500/10" : ""
+            ]
+              .filter(Boolean)
+              .join(" ")}
+            value={personal.monthlyIncome}
+            onChange={(event) => onChange({ monthlyIncome: event.target.value })}
+          >
+            <option value="">Select monthly income range</option>
+            {LOAN_MONTHLY_INCOME_OPTIONS.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+          {errors.monthlyIncome ? (
+            <span className="text-sm text-red-500">{errors.monthlyIncome}</span>
+          ) : null}
+        </label>
+        <label className="flex flex-col gap-2">
+          <span className="text-sm font-medium text-slate-700">Loan Amount</span>
+          <select
+            className={[
+              selectClassName,
+              errors.loanAmount ? "border-red-500 focus:border-red-500 focus:ring-red-500/10" : ""
+            ]
+              .filter(Boolean)
+              .join(" ")}
+            value={personal.loanAmount}
+            onChange={(event) => onChange({ loanAmount: event.target.value })}
+          >
+            <option value="">Select loan amount</option>
+            {LOAN_AMOUNT_OPTIONS.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+          {errors.loanAmount ? (
+            <span className="text-sm text-red-500">{errors.loanAmount}</span>
+          ) : null}
+        </label>
+        <label className="flex flex-col gap-2">
+          <span className="text-sm font-medium text-slate-700">Loan Tenure</span>
+          <select
+            className={[
+              selectClassName,
+              errors.loanTenure ? "border-red-500 focus:border-red-500 focus:ring-red-500/10" : ""
+            ]
+              .filter(Boolean)
+              .join(" ")}
+            value={personal.loanTenure}
+            onChange={(event) => onChange({ loanTenure: event.target.value })}
+          >
+            <option value="">Select loan tenure</option>
+            {LOAN_TENURE_OPTIONS.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+          {errors.loanTenure ? (
+            <span className="text-sm text-red-500">{errors.loanTenure}</span>
+          ) : null}
+        </label>
       </div>
 
       <div className="flex flex-wrap justify-between gap-4">

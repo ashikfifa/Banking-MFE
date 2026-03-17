@@ -35,7 +35,7 @@ export function ReviewStep({ selectedProduct, personal, onBack, onSubmit, format
             <div>
               <dt className="text-slate-400">Requested amount</dt>
               <dd className="font-medium text-slate-700">
-                {personal.loanAmount ? formatCurrency(personal.loanAmount) : "Not provided"}
+                {personal.loanAmount || "Not provided"}
               </dd>
             </div>
           </dl>

@@ -1,4 +1,8 @@
 import { Button, Card, Input } from "@banking-mf/ui-library";
+import { MONTHLY_INCOME_OPTIONS } from "../lib/onboardingValidation.js";
+
+const selectClassName =
+  "rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10";
 
 export function IncomeStep({ income, errors, onChange, onBack, onContinue }) {
   return (
@@ -18,14 +22,29 @@ export function IncomeStep({ income, errors, onChange, onBack, onContinue }) {
           error={errors.occupation}
           onChange={(event) => onChange({ occupation: event.target.value })}
         />
-        <Input
-          label="Monthly Income"
-          type="number"
-          placeholder="Enter monthly income"
-          value={income.monthlyIncome}
-          error={errors.monthlyIncome}
-          onChange={(event) => onChange({ monthlyIncome: event.target.value })}
-        />
+        <label className="flex flex-col gap-2">
+          <span className="text-sm font-medium text-slate-700">Monthly Income</span>
+          <select
+            className={[
+              selectClassName,
+              errors.monthlyIncome ? "border-red-500 focus:border-red-500 focus:ring-red-500/10" : ""
+            ]
+              .filter(Boolean)
+              .join(" ")}
+            value={income.monthlyIncome}
+            onChange={(event) => onChange({ monthlyIncome: event.target.value })}
+          >
+            <option value="">Select monthly income range</option>
+            {MONTHLY_INCOME_OPTIONS.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+          {errors.monthlyIncome ? (
+            <span className="text-sm text-red-500">{errors.monthlyIncome}</span>
+          ) : null}
+        </label>
         <Input
           label="Company Name"
           placeholder="Enter company name"
