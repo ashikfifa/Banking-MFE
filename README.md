@@ -28,3 +28,7 @@ pnpm dev
 ```bash
 pnpm build
 ```
+
+## Preview
+
+![BRAC Bank dashboard preview](docs/dashboard-preview.png)
