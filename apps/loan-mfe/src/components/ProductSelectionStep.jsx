@@ -7,20 +7,25 @@ export function ProductSelectionStep({
   formatCurrency
 }) {
   return (
-    <Card className="space-y-4">
-      <div>
-        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-blue-600">
-          Step 1
-        </p>
-        <h2 className="mt-2 text-2xl font-semibold text-slate-900">Select a loan product</h2>
-        <p className="mt-2 text-sm text-slate-500">
-          Products are loaded from a local JSON file through a small async wrapper to simulate an
-          API request.
-        </p>
+    <div className="space-y-4">
+      {/* section header */}
+      <div className="rounded-xl bg-white p-6 shadow">
+        <div className="flex items-center gap-3">
+          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">
+            1
+          </div>
+          <div>
+            <h2 className="text-xl font-bold text-slate-900">Select a Loan Product</h2>
+            <p className="text-sm text-slate-500">
+              Choose a loan product that best fits your needs.
+            </p>
+          </div>
+        </div>
       </div>
 
+      {/* product cards */}
       {isLoadingProducts ? (
-        <div className="rounded-xl bg-gray-100 p-6 shadow">
+        <div className="rounded-xl bg-white p-6 shadow">
           <Loader label="Fetching loan products..." />
         </div>
       ) : (
@@ -30,26 +35,43 @@ export function ProductSelectionStep({
               key={product.id}
               type="button"
               onClick={() => onSelectProduct(product)}
-              className="flex h-full flex-col gap-4 rounded-xl bg-white p-6 text-left shadow transition hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-600/10"
+              className="group relative flex h-full flex-col rounded-xl border-2 border-slate-100 bg-white p-6 text-left shadow transition-all duration-200 hover:border-blue-500 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-600/20"
             >
-              <div className="space-y-4">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-600">
-                  {product.interestRate} interest
-                </p>
-                <h3 className="text-xl font-semibold text-slate-900">{product.name}</h3>
-                <p className="text-sm leading-6 text-slate-500">{product.tagline}</p>
+              {/* interest rate badge */}
+              <div className="mb-4 inline-flex self-start rounded-full bg-blue-50 px-3 py-1">
+                <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
+                  {product.interestRate} Interest
+                </span>
               </div>
 
-              <div className="mt-auto rounded-xl bg-gray-100 p-4 shadow">
-                <p className="text-sm font-medium text-slate-700">
-                  Maximum amount: {formatCurrency(product.maxAmount)}
-                </p>
-                <p className="mt-4 text-sm font-medium text-blue-600">Click card to select</p>
+              {/* product name & tagline */}
+              <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                {product.name}
+              </h3>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-500">
+                {product.tagline}
+              </p>
+
+              {/* max amount section */}
+              <div className="mt-4 rounded-xl border border-slate-100 bg-gray-100 p-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-xs font-medium uppercase tracking-wider text-slate-400">
+                      Max Amount
+                    </p>
+                    <p className="mt-1 text-lg font-bold text-slate-900">
+                      {formatCurrency(product.maxAmount)}
+                    </p>
+                  </div>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-blue-200 text-blue-500 transition-all group-hover:border-blue-500 group-hover:bg-blue-600 group-hover:text-white">
+                    →
+                  </div>
+                </div>
               </div>
             </button>
           ))}
         </div>
       )}
-    </Card>
+    </div>
   );
 }

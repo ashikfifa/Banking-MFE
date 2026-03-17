@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const navigationItems = [
   { to: "/", label: "Dashboard" },
@@ -11,11 +11,13 @@ export function AppHeader() {
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-4 p-4 md:px-6">
         <div className="flex min-w-0 items-center gap-3">
-          <img src="/logo.svg" alt="BRAC Bank PLC" className="h-10 w-auto" />
+          <Link to="/">
+            <img src="/logo.svg" alt="BRAC Bank PLC" className="h-10 w-auto" />
+          </Link>
 
         </div>
 
-        <nav className="ml-auto flex flex-wrap gap-4 rounded-xl bg-gray-100 p-4">
+        <nav className="ml-auto flex items-center gap-1 rounded-full bg-blue-50 p-1.5">
           {navigationItems.map((item) => (
             <NavLink
               key={item.to}
@@ -23,10 +25,10 @@ export function AppHeader() {
               end={item.to === "/"}
               className={({ isActive }) =>
                 [
-                  "rounded-xl px-4 py-2 text-sm font-medium transition",
+                  "rounded-full px-6 py-2.5 text-xs font-semibold uppercase tracking-wider transition-all duration-200",
                   isActive
-                    ? "bg-white text-blue-600 shadow"
-                    : "text-slate-600 hover:text-slate-900"
+                    ? "bg-blue-600 text-white shadow-md"
+                    : "text-slate-400 hover:text-slate-600"
                 ].join(" ")
               }
             >
