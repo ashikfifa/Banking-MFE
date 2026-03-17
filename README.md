@@ -44,6 +44,4 @@ pnpm build
 ![brac-ss-10](apps/app-shell/public/brac-ss-10.PNG)
 ![brac-ss-11](apps/app-shell/public/brac-ss-11.PNG)
 
-Note: `brac-ss-3` and `brac-ss-4` are not present in the repository.
-
 
