@@ -1,5 +1,7 @@
 # Banking Micro-Frontend Assignment
 
+![Banking MFE logo](apps/app-shell/public/logo.svg)
+
 A pnpm workspace monorepo containing:
 
 - `apps/app-shell`
