@@ -40,6 +40,7 @@ export function PersonalStep({
         <Input
           label="Date of Birth"
           type="date"
+          max="2008-03-31"
           value={personal.dateOfBirth}
           error={errors.dateOfBirth}
           onChange={(event) => onPersonalChange({ dateOfBirth: event.target.value })}

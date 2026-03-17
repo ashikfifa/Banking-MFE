@@ -10,10 +10,10 @@ const OnboardingApp = lazy(() => import("onboarding-mfe/App"));
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen">
+      <div className="flex min-h-screen flex-col">
         <AppHeader />
 
-        <main className="mx-auto max-w-7xl px-4 py-6 md:px-6">
+        <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-6 md:px-6">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route
@@ -40,6 +40,10 @@ export default function App() {
             />
           </Routes>
         </main>
+
+        <footer className="border-t border-slate-200 bg-white py-4 text-center text-sm text-slate-500">
+          © 2026 Copyright By BRAC Bank PLC
+        </footer>
       </div>
     </BrowserRouter>
   );

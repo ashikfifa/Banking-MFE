@@ -3,25 +3,26 @@ import { Card, Loader } from "@banking-mf/ui-library";
 
 export function RemotePanel({ title, description, children }) {
   return (
-    <Card>
-      <div className="mb-6 flex items-end justify-between gap-4">
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-blue-600">
-            Micro frontend
-          </p>
-          <h1 className="mt-2 text-2xl font-semibold text-slate-900">{title}</h1>
-          <p className="mt-2 text-sm text-slate-500">{description}</p>
-        </div>
+    <div className="space-y-4">
+      {/* panel header */}
+      <div className="rounded-xl bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 p-6 text-white shadow">
+        <p className="text-xs font-semibold uppercase tracking-widest opacity-70">
+          BRAC Bank
+        </p>
+        <h1 className="mt-2 text-2xl font-bold">{title}</h1>
+        <p className="mt-1 max-w-2xl text-sm opacity-80">{description}</p>
       </div>
+
+      {/* content */}
       <Suspense
         fallback={
-          <div className="rounded-xl bg-gray-100 p-6 shadow">
-            <Loader label="Loading remote module..." />
+          <div className="rounded-xl bg-white p-6 shadow">
+            <Loader label="Loading module..." />
           </div>
         }
       >
         {children}
       </Suspense>
-    </Card>
+    </div>
   );
 }
