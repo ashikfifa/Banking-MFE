@@ -8,16 +8,11 @@ const navigationItems = [
 
 export function AppHeader() {
   return (
-    <header className="border-b border-slate-200 bg-white">
+    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-4 p-4 md:px-6">
         <div className="flex min-w-0 items-center gap-3">
           <img src="/logo.svg" alt="BRAC Bank PLC" className="h-10 w-auto" />
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-blue-600">
-              BRAC Bank PLC
-            </p>
-            <p className="text-lg font-semibold text-slate-900">Retail Banking Platform</p>
-          </div>
+
         </div>
 
         <nav className="ml-auto flex flex-wrap gap-4 rounded-xl bg-gray-100 p-4">
