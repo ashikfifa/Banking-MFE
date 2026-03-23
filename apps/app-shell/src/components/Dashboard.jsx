@@ -92,7 +92,7 @@ export function Dashboard() {
     <div className="space-y-4">
       {/* ─── welcome banner ──────────────────────────────── */}
       <div className="overflow-hidden rounded-xl bg-gradient-to-r from-blue-700 via-blue-600 to-blue-500 p-6 text-white shadow">
-        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col gap-6 md:!flex-row md:!items-center md:!justify-between">
           <div className="space-y-2">
             <p className="text-sm font-medium tracking-wide opacity-80">
               {new Date().toLocaleDateString("en-US", { weekday: "long", year: "numeric", month: "long", day: "numeric" })}
@@ -104,7 +104,7 @@ export function Dashboard() {
               Manage onboarding workflows & loan applications from a single dashboard.
             </p>
           </div>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap justify-center gap-3 md:!justify-end">
             <NavLink to="/onboarding">
               <Button className="!bg-white !text-black hover:!bg-blue-600 hover:!text-white">Start Onboarding</Button>
             </NavLink>
